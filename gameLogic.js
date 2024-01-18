@@ -6,16 +6,28 @@ let computerScore = 0;
 const rockButton = document.querySelector("#rock");
 rockButton.addEventListener("click", () => {
     resultsField.textContent = turn("Rock", getComputerChoice())
+
+    if ((playerScore == 5) || (computerScore == 5)) {
+        resultsField.textContent = determineWinner(playerScore, computerScore);
+    }
 });
 
 let paperButton = document.querySelector("#paper");
 paperButton.addEventListener("click", () => {
     resultsField.textContent = turn("Paper", getComputerChoice())
+
+    if ((playerScore == 5) || (computerScore == 5)) {
+        resultsField.textContent = determineWinner(playerScore, computerScore);
+    }
 });
 
 let scissorsButton = document.querySelector("#scissors");
 scissorsButton.addEventListener("click", () => {
     resultsField.textContent = turn("Scissors", getComputerChoice())
+
+    if ((playerScore == 5) || (computerScore == 5)) {
+        resultsField.textContent = determineWinner(playerScore, computerScore);
+    }
 });
 
 function getComputerChoice() {
@@ -100,7 +112,7 @@ function determineWinner(playerWin, computerWin) {
     if (playerWin > computerWin) {
         return "The winner of the game is you!";
     } else if (playerWin < computerWin) {
-        return "The winner of the game is the computer!";
+        return "You lost the game!";
     } else if ((playerWin == computerWin) && (playerWin != 0) && (computerWin != 0)) {
         return "The game is a draw!";
     }
