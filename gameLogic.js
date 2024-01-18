@@ -9,6 +9,10 @@ rockButton.addEventListener("click", () => {
 
     if ((playerScore == 5) || (computerScore == 5)) {
         resultsField.textContent = determineWinner(playerScore, computerScore);
+        document.querySelector("#rock").style.pointerEvents = "none";
+        document.querySelector("#paper").style.pointerEvents = "none";
+        document.querySelector("#scissors").style.pointerEvents = "none";
+        resultsField.addEventListener("click", () => location.reload());
     }
 });
 
@@ -18,6 +22,10 @@ paperButton.addEventListener("click", () => {
 
     if ((playerScore == 5) || (computerScore == 5)) {
         resultsField.textContent = determineWinner(playerScore, computerScore);
+        document.querySelector("#rock").style.pointerEvents = "none";
+        document.querySelector("#paper").style.pointerEvents = "none";
+        document.querySelector("#scissors").style.pointerEvents = "none";
+        resultsField.addEventListener("click", () => location.reload());
     }
 });
 
@@ -27,6 +35,10 @@ scissorsButton.addEventListener("click", () => {
 
     if ((playerScore == 5) || (computerScore == 5)) {
         resultsField.textContent = determineWinner(playerScore, computerScore);
+        document.querySelector("#rock").style.pointerEvents = "none";
+        document.querySelector("#paper").style.pointerEvents = "none";
+        document.querySelector("#scissors").style.pointerEvents = "none";
+        resultsField.addEventListener("click", () => location.reload());
     }
 });
 

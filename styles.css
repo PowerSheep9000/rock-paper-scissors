@@ -142,3 +142,9 @@ body {
     font-size: 28px;
     color: #22211d;
 }
+
+.footer {
+    display: flex;
+    background-color: #D5B59A;
+    justify-content: center;
+}
