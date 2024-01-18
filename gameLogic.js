@@ -1,4 +1,21 @@
-console.log(game());
+//console.log(game());
+const resultsField = document.querySelector("#results-field");
+
+const rockButton = document.querySelector("#rock");
+console.log(rockButton);
+rockButton.addEventListener("click", () => {
+    resultsField.textContent = turn("Rock", getComputerChoice())
+});
+
+let paperButton = document.querySelector("#paper");
+paperButton.addEventListener("click", () => {
+    resultsField.textContent = turn("Paper", getComputerChoice())
+});
+
+let scissorsButton = document.querySelector("#scissors");
+scissorsButton.addEventListener("click", () => {
+    resultsField.textContent = turn("Scissors", getComputerChoice())
+});
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
@@ -30,7 +47,7 @@ function turn(playerSelection, computerSelection) {
     }
 }
 
-function game() {
+/*function game() {
     let i = 0;
     let playerWin = 0;
     let computerWin = 0;
@@ -48,7 +65,7 @@ function game() {
         i++;
     }
     return determineWinner(playerWin, computerWin);
-}
+}*/
 
 function determineWinner(playerWin, computerWin) {
     if (playerWin > computerWin) {

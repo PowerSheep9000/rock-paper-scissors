@@ -1,0 +1,74 @@
+/* styles.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: auto;
+    /*overflow-y: scroll;
+    scrollbar-width: none;*/
+    font-family: Roboto, sans-serif;
+}
+
+/* header styling */
+.header {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #9da8a2;
+}
+
+#header-title {
+    font-size: 64px;
+    padding: 8px;
+    border: solid 4px #22211d;
+    border-radius: 8px;
+    background-color: #948486;
+    color: #22211d;
+}
+
+/* main styling */
+.main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+    background-color: #f4f4f4;
+}
+
+.main-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 64px;
+}
+
+.main-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 80px;
+    border: solid #22211d 4px;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+
+#rock,
+#paper,
+#scissors {
+    height: 128px;
+    width: 128px;
+    padding: 8px;
+    border: solid #22211d 4px;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+
+#results-field {
+    font-size: 28px;
+    color: #22211d;
+}

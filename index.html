@@ -3,10 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Rock-Paper-Scissors</title>
-    <script type="text/javascript" src="gameLogic.js"></script>
+    <script type="text/javascript" src="gameLogic.js" defer></script>
 </head>
 <body>
-
+    <div class="header">
+        <h1 id="header-title">Rock-Paper-Scissors</h1>
+    </div>
+    <div class="main">
+        <div class="main-top">
+            <div class="buttons">
+                <img id="rock" src="./images/stone.png">
+            </div>
+            <div class="buttons">
+                <img id="paper" src="./images/scroll.png">
+            </div>
+            <div class="buttons">
+                <img id="scissors" src="./images/swords.png">
+            </div>
+        </div>
+        <div class="main-bottom">
+            <div id="results-field"></div>
+        </div>
+    </div>
 </body>
 </html>
