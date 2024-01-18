@@ -1,8 +1,9 @@
 //console.log(game());
 const resultsField = document.querySelector("#results-field");
+let playerScore = 0;
+let computerScore = 0;
 
 const rockButton = document.querySelector("#rock");
-console.log(rockButton);
 rockButton.addEventListener("click", () => {
     resultsField.textContent = turn("Rock", getComputerChoice())
 });
@@ -37,13 +38,41 @@ function turn(playerSelection, computerSelection) {
     if ((playerSelection == "Rock" && computerSelection == "Scissors") ||
         (playerSelection == "Paper" && computerSelection == "Rock") ||
         (playerSelection == "Scissors" && computerSelection == "Paper")) {
+
+        playerScore++;
+        setPlayerScore();
         return `You win! ${playerSelection} beats ${computerSelection}`;
     } else if ((playerSelection == "Paper" && computerSelection == "Scissors") ||
                (playerSelection == "Rock" && computerSelection == "Paper") ||
                (playerSelection == "Scissors" && computerSelection == "Rock")) {
+
+        computerScore++;
+        setComputerScore();
         return `You lose! ${computerSelection} beats ${playerSelection}`;
     } else if (playerSelection == computerSelection) {
         return "Draw!";
+    }
+}
+
+function setPlayerScore() {
+    const scoreList = document.querySelectorAll(".checks-player");
+
+    for (let i = 0; i < scoreList.length; i++) {
+        if (window.getComputedStyle(scoreList[i]).visibility === "hidden") {
+            scoreList[i].style.visibility = "visible";
+            break;
+        }
+    }
+}
+
+function setComputerScore() {
+    const scoreList = document.querySelectorAll(".checks-computer");
+
+    for (let i = 0; i < scoreList.length; i++) {
+        if (window.getComputedStyle(scoreList[i]).visibility === "hidden") {
+            scoreList[i].style.visibility = "visible";
+            break;
+        }
     }
 }
 
@@ -72,7 +101,7 @@ function determineWinner(playerWin, computerWin) {
         return "The winner of the game is you!";
     } else if (playerWin < computerWin) {
         return "The winner of the game is the computer!";
-    } else if (playerWin == computerWin) {
+    } else if ((playerWin == computerWin) && (playerWin != 0) && (computerWin != 0)) {
         return "The game is a draw!";
     }
 }
